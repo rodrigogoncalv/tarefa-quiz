@@ -1,34 +1,14 @@
-mport { questionsDB } from './question_db.js';
-
-const DOM_question = document.querySelector(
-    [data-js-question]
-);
-
-const DOM_choices = document.querySelectorAll(
-    [data-js-choice]
-);
-
-const DOM_totalQuestions = document.querySelector(
-    [data-js-total-questions]
-);
-
-const DOM_totalRemainingQuestions = document.querySelector(
-    [data-js-total-remaining-questions]
-);
-
-const DOM_rightAnswer = document.querySelector(
-    [data-js-right-answer]
-);
-
-const DOM_wrongAnswer = document.querySelector(
-    [data-js-wrong-answer]
-);
-
-const DOM_buttonNext = document.querySelector(
-    [data-js-button-next]
-);
+import { questionsDB } from './question_db.js';
+const DOM_question = document.querySelector('[data-js-question]');
+const DOM_choices = document.querySelectorAll('[data-js-choice]');
+const DOM_buttonNext = document.querySelector('[data-js-button-next]');
+const DOM_rightAnswer = document.querySelector('[data-js-right-anwser]');
+const DOM_wrongAnswer = document.querySelector('[data-js-wrong-answer]');
+const DOM_totalQuestions = document.querySelector('[data-js-total-questions]');
+const DOM_totalRemainingQuestions = document.querySelector('[data-js-total-remaining-questions]');
 
 const totalQuestions = questionsDB.length;
+
 let currentQuestion = 0;
 let totalRightAnswer = 0;
 let totalWrongAnswer = 0;
@@ -37,7 +17,7 @@ let totalRemainingQuestions = questionsDB.length;
 
 const clearAndAddText = (element, text, value) => {
     element.innerText = '';
-    element.innerText = ${text} ${value};
+    element.innerText = `${text} ${value}`;
 };
 
 const shuffleArray = (array) => {
@@ -105,7 +85,7 @@ const checkAnswer = (event) => {
         totalWrongAnswer += 1;
         clearAndAddText(DOM_totalRemainingQuestions, 'Perguntas restantes:', totalRemainingQuestions);
         clearAndAddText(DOM_wrongAnswer, 'Erros:', totalWrongAnswer);
-        alert(Errado! Resposta correta '${rightAnswer.toUpperCase()}');
+        alert(`Errado! Resposta correta ${rightAnswer.toUpperCase()}`);
     }
 };
 
@@ -135,7 +115,7 @@ DOM_buttonNext.addEventListener('click', () => {
         loadQuestion();
     }
     else {
-        alert(Fim de jogo! Você acertou ${totalRightAnswer} de ${totalQuestions} perguntas.);
+        alert(`Fim de jogo! Você acertou ${totalRightAnswer} de ${totalQuestions} perguntas.`);
         restartQuiz();
     }
 });
