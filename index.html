@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <script type="module" src="./assets/js/index.js" defer></script>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Quiz</h1>
+
+        <p id="score" data-js-total-questions>
+        total de peguntas: 0</p>
+        <p id="remaining" data-js-total-remaining-questions> restantes: 0</p>
+        <p id="right" data-js-right-anwser>acertos: 0</p>
+        <p id="wrong" data-js-wrong-answer>erros: 0</p>
+        <p id="question"data-js-question>pergunta</p>
+
+        <div class="choices" data-js-choices>
+            <button class="choice"  data-js-choice>opçâo 1</button>
+            <button class="choice"  data-js-choice>opçâo 2</button>
+            <button class="choice"  data-js-choice>opçâo 3</button>
+            <button class="choice"  data-js-choice>opção 4</button>
+        </div>
+
+        <button id="button-next" data-js-button-next>próxima</button>
+    </div>
+    
+</body>
+</html>
